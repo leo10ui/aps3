@@ -104,7 +104,7 @@ public class GameScreen extends JPanel implements Runnable, KeyListener {
 				if(gameState == MENU_GAME_STATE){
 				g.setColor(Color.BLACK);
 				mainCharacter.draw(g);
-				g.drawString("APERTE ESPAÇO PARA COMEÇAR ", 200, 50);
+				g.drawString("APERTE ENTER PARA COMEÇAR  ", 200, 50);
 				g.drawString("APERTE ESC PARA SAIR ", 200, 100);
 				}
 			break;
