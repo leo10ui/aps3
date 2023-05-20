@@ -145,6 +145,8 @@ public class Personagemprincipal {
 	
 	public void morte(boolean estamorto) {
 		if(estamorto) {
+			coletaveis = 0;
+			pontuacao = 0;
 			estado = morte;
 		} else {
 			estado = corrida_normal;
