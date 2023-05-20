@@ -67,7 +67,6 @@ public class Telajogo extends JPanel implements Runnable, KeyListener {
 				personagemprincipal.tocasommorte();
 				estadodejogo = estado_fimjogo;
 				personagemprincipal.morte(true);
-				
 			}
 			if (GerenciadorColeteveis.colidiu()) {
 				personagemprincipal.tocasommoeda();
@@ -102,7 +101,6 @@ public class Telajogo extends JPanel implements Runnable, KeyListener {
 			if (estadodejogo == estado_fimjogo) {
 				g.drawImage(imagemfimdejogo, 200, 30, null);
 				g.drawImage(imagemjogarnovamente, 283, 50, null);
-				
 			}
 			break;
 		}

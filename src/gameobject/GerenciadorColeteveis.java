@@ -19,8 +19,8 @@ public class GerenciadorColeteveis {
 	
 	public GerenciadorColeteveis(Personagemprincipal personagemprincipal) {
 		aleatorio = new Random();
-		coletavel1 = Resource.getResouceImage("data/coletavel1.png");
-		coletavel2 = Resource.getResouceImage("data/coletavel1.png");
+		coletavel1 = Resource.getResouceImage("data/planta1.png");
+		coletavel2 = Resource.getResouceImage("data/planta2.png");
 		coletaveis = new ArrayList<Collect>();
 		this.personagemprincipal = personagemprincipal;
 		coletaveis.add(criarColetavel());
@@ -47,9 +47,9 @@ public class GerenciadorColeteveis {
 		// if (enemyType = getRandom)
 		int type = aleatorio.nextInt(2);
 		if(type == 0) {
-			return new Planta(personagemprincipal, 900, coletavel1.getWidth() - 10, coletavel1.getHeight() - 10, coletavel1);
+			return new Planta(personagemprincipal, 950, coletavel1.getWidth() - 10, coletavel1.getHeight() - 10, coletavel1);
 		} else {
-			return new Planta(personagemprincipal, 600, coletavel2.getWidth() - 10, coletavel2.getHeight() - 10, coletavel2);
+			return new Planta(personagemprincipal, 923, coletavel2.getWidth() - 10, coletavel2.getHeight() - 10, coletavel2);
 		}
 	}
 	
