@@ -17,7 +17,7 @@ public class Nuvens {
 	
 	public Nuvens(int width, Personagemprincipal personagemprincipal) {
 		this.personagemprincipal = personagemprincipal;
-		nuvens = Resource.getResouceImage("data/cloud.png");
+		nuvens = Resource.getResouceImage("data/nuvens.png");
 		listanuvens = new ArrayList<Imagemnuvens>();
 		
 		Imagemnuvens imagemnuven = new Imagemnuvens();

@@ -22,9 +22,9 @@ public class Terreno {
 	
 	public Terreno(int width, Personagemprincipal personagemprincipal) {
 		this.personagemprincipal = personagemprincipal;
-		terreno1 = Resource.getResouceImage("data/land1.png");
-		terreno2 = Resource.getResouceImage("data/land2.png");
-		terreno3 = Resource.getResouceImage("data/land3.png");
+		terreno1 = Resource.getResouceImage("data/terreno1.png");
+		terreno2 = Resource.getResouceImage("data/terreno2.png");
+		terreno3 = Resource.getResouceImage("data/terreno3.png");
 		int numerodoterreno = width / terreno1.getWidth() + 2;
 		terrenolista = new ArrayList<Imagemterreno>();
 		for(int i = 0; i < numerodoterreno; i++) {

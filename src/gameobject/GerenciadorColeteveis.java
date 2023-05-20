@@ -19,8 +19,8 @@ public class GerenciadorColeteveis {
 	
 	public GerenciadorColeteveis(Personagemprincipal personagemprincipal) {
 		aleatorio = new Random();
-		coletavel1 = Resource.getResouceImage("data/coin1.png");
-		coletavel2 = Resource.getResouceImage("data/coin1.png");
+		coletavel1 = Resource.getResouceImage("data/coletavel1.png");
+		coletavel2 = Resource.getResouceImage("data/coletavel1.png");
 		coletaveis = new ArrayList<Collect>();
 		this.personagemprincipal = personagemprincipal;
 		coletaveis.add(criarColetavel());

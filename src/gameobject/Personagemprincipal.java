@@ -47,19 +47,19 @@ public class Personagemprincipal {
 		posY = posicao_terreno;
 		rectBound = new Rectangle();
 		animacaocorridanormal = new Animation(150);
-		animacaocorridanormal.addFrame(Resource.getResouceImage("data/main-character1.png"));
-		animacaocorridanormal.addFrame(Resource.getResouceImage("data/main-character2.png"));
-		animacaocorridanormal.addFrame(Resource.getResouceImage("data/main-character3.png"));
-		pulando = Resource.getResouceImage("data/main-character2.png");
+		animacaocorridanormal.addFrame(Resource.getResouceImage("data/personagemprincipal1.png"));
+		animacaocorridanormal.addFrame(Resource.getResouceImage("data/personagemprincipal2.png"));
+		animacaocorridanormal.addFrame(Resource.getResouceImage("data/personagemprincipal3.png"));
+		pulando = Resource.getResouceImage("data/personagemprincipal2.png");
 		animacaocorridaabaixada = new Animation(150);
-		animacaocorridaabaixada.addFrame(Resource.getResouceImage("data/main-character5.png"));
-		animacaocorridaabaixada.addFrame(Resource.getResouceImage("data/main-character6.png"));
-		imamgemmorte = Resource.getResouceImage("data/main-character4.png");
+		animacaocorridaabaixada.addFrame(Resource.getResouceImage("data/personagemprincipal5.png"));
+		animacaocorridaabaixada.addFrame(Resource.getResouceImage("data/personagemprincipal6.png"));
+		imamgemmorte = Resource.getResouceImage("data/personagemprincipal4.png");
 		
 		try {
-			sompulo =  Applet.newAudioClip(new URL("file","","data/jump.wav"));
-			mortesom =  Applet.newAudioClip(new URL("file","","data/dead.wav"));
-			baraulhobonus =  Applet.newAudioClip(new URL("file","","data/scoreup.wav"));
+			sompulo =  Applet.newAudioClip(new URL("file","","data/pulo.wav"));
+			mortesom =  Applet.newAudioClip(new URL("file","","data/morte.wav"));
+			baraulhobonus =  Applet.newAudioClip(new URL("file","","data/aumentaponto.wav"));
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}

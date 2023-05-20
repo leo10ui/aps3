@@ -44,8 +44,8 @@ public class Telajogo extends JPanel implements Runnable, KeyListener {
 		personagemprincipal = new Personagemprincipal();
 		land = new Terreno(Janelajogo.SCREEN_WIDTH, personagemprincipal);
 		personagemprincipal.setSpeedX(4);
-		imagemjogarnovamente = Resource.getResouceImage("data/replay_button.png");
-		imagemfimdejogo = Resource.getResouceImage("data/gameover_text.png");
+		imagemjogarnovamente = Resource.getResouceImage("data/restart.png");
+		imagemfimdejogo = Resource.getResouceImage("data/fimdejogo.png");
 		gerenciadorInimigos = new GerenciadorInimigos(personagemprincipal);
 		nuvens = new Nuvens(Janelajogo.SCREEN_WIDTH, personagemprincipal);
 		GerenciadorColeteveis = new GerenciadorColeteveis(personagemprincipal);

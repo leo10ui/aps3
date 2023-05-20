@@ -12,8 +12,8 @@ import util.Resource;
 
 public class GerenciadorInimigos {
 	
-	private BufferedImage cactus1;
-	private BufferedImage cactus2;
+	private BufferedImage obstaculo1;
+	private BufferedImage obstaculo2;
 	private Random aleatorio;
 	
 	private List<Inimigos> inimigos;
@@ -21,8 +21,8 @@ public class GerenciadorInimigos {
 	
 	public GerenciadorInimigos(Personagemprincipal personagemprincipal) {
 		aleatorio = new Random();
-		cactus1 = Resource.getResouceImage("data/cactus1.png");
-		cactus2 = Resource.getResouceImage("data/cactus2.png");
+		obstaculo1 = Resource.getResouceImage("data/obstaculo1.png");
+		obstaculo2 = Resource.getResouceImage("data/obstaculo2.png");
 		inimigos = new ArrayList<Inimigos>();
 		this.personagemprincipal = personagemprincipal;
 		inimigos.add(criarInimigo());
@@ -50,9 +50,9 @@ public class GerenciadorInimigos {
 		// if (enemyType = getRandom)
 		int type = aleatorio.nextInt(2);
 		if(type == 0) {
-			return new Obstaculos(personagemprincipal, 800, cactus1.getWidth() - 10, cactus1.getHeight() - 10, cactus1);
+			return new Obstaculos(personagemprincipal, 800, obstaculo1.getWidth() - 10, obstaculo1.getHeight() - 10, obstaculo1);
 		} else {
-			return new Obstaculos(personagemprincipal, 800, cactus2.getWidth() - 10, cactus2.getHeight() - 10, cactus2);
+			return new Obstaculos(personagemprincipal, 800, obstaculo2.getWidth() - 10, obstaculo2.getHeight() - 10, obstaculo2);
 		}
 	}
 	
