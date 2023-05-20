@@ -82,7 +82,7 @@ public class Personagemprincipal {
 				g.drawImage(pulando, (int) posX, (int) posY, null);
 				break;
 			case corrida_abaixado:
-				g.drawImage(animacaocorridaabaixada.getFrame(), (int) posX, (int) (posY + 20), null);
+				g.drawImage(animacaocorridaabaixada.getFrame(), (int) posX, (int) (posY + 5), null);
 				break;
 			case morte:
 				g.drawImage(imamgemmorte, (int) posX, (int) posY, null);
