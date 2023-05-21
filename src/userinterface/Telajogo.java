@@ -1,5 +1,8 @@
 package userinterface;
 
+import javax.swing.*;
+import java.awt.*;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
@@ -23,6 +26,7 @@ public class Telajogo extends JPanel implements Runnable, KeyListener {
 	private static final int estado_inicioJogo = 0;
 	private static final int estado_jogando = 1;
 	private static final int estado_fimjogo = 2;
+	private static final int estado_menu = 3;
 	
 	private Ceu ceu;
 	private Terreno land;
@@ -34,10 +38,11 @@ public class Telajogo extends JPanel implements Runnable, KeyListener {
 
 	private boolean teclapressionada;
 
-	private int estadodejogo = estado_inicioJogo;
+	private int estadodejogo = estado_menu;
 
 	private BufferedImage imagemjogarnovamente;
 	private BufferedImage imagemfimdejogo;
+	private Image btnPlay;
 
 	public Telajogo() {
 		ceu = new Ceu();
@@ -46,6 +51,7 @@ public class Telajogo extends JPanel implements Runnable, KeyListener {
 		personagemprincipal.setSpeedX(4);
 		imagemjogarnovamente = Resource.getResouceImage("data/restart.png");
 		imagemfimdejogo = Resource.getResouceImage("data/fimdejogo.png");
+		btnPlay = new ImageIcon("data/play.gif").getImage();
 		gerenciadorInimigos = new GerenciadorInimigos(personagemprincipal);
 		nuvens = new Nuvens(Janelajogo.SCREEN_WIDTH, personagemprincipal);
 		GerenciadorColeteveis = new GerenciadorColeteveis(personagemprincipal);
@@ -102,6 +108,16 @@ public class Telajogo extends JPanel implements Runnable, KeyListener {
 				g.drawImage(imagemfimdejogo, 200, 30, null);
 				g.drawImage(imagemjogarnovamente, 283, 50, null);
 			}
+			break;
+		case estado_menu:
+			ceu.draw(g);
+			nuvens.draw(g);
+			land.draw(g);
+			g.setColor(Color.BLACK);
+			//g.drawString("Ecorunner, um jogo sobre sustentabilidade", 200, 20);
+			//g.drawString("APERTE ESPAÇO PARA COMEÇAR ", 200, 50);
+			//g.drawString("APERTE ESC PARA SAIR ", 200, 100);
+			g.drawImage(btnPlay, 200,30,null);
 			break;
 		}
 	}
@@ -161,6 +177,11 @@ public class Telajogo extends JPanel implements Runnable, KeyListener {
 				if (e.getKeyCode() == KeyEvent.VK_SPACE) {
 					estadodejogo = estado_jogando;
 					resetajogo();
+				}
+				break;               
+			case estado_menu:
+				if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+					estadodejogo = estado_jogando;
 				}
 				break;
 
