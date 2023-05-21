@@ -96,7 +96,7 @@ public class Telajogo extends JPanel implements Runnable, KeyListener {
 			gerenciadorInimigos.draw(g);
 			personagemprincipal.draw(g);
 			g.setColor(Color.BLACK);
-			g.drawString("OBSTACULOS PULADOS " + personagemprincipal.pontuacao, 300, 20);
+			g.drawString("Obstaculos " + personagemprincipal.pontuacao, 300, 20);
 			g.drawString("Coletaveis " + personagemprincipal.coletaveis, 150, 20);
 			if (estadodejogo == estado_fimjogo) {
 				g.drawImage(imagemfimdejogo, 200, 30, null);

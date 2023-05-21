@@ -54,6 +54,7 @@ public class Personagemprincipal {
 		animacaocorridaabaixada = new Animation(150);
 		animacaocorridaabaixada.addFrame(Resource.getResouceImage("data/personagemprincipal5.png"));
 		animacaocorridaabaixada.addFrame(Resource.getResouceImage("data/personagemprincipal6.png"));
+		animacaocorridaabaixada.addFrame(Resource.getResouceImage("data/personagemprincipal7.png"));
 		imamgemmorte = Resource.getResouceImage("data/personagemprincipal4.png");
 		
 		try {
