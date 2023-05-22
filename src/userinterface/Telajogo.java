@@ -8,6 +8,11 @@ import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.applet.AudioClip;
+import java.applet.Applet;
 
 import javax.swing.JPanel;
 
@@ -36,25 +41,31 @@ public class Telajogo extends JPanel implements Runnable, KeyListener {
 	private Thread thread;
 	private GerenciadorColeteveis GerenciadorColeteveis;
 
+	private AudioClip musica;
+
 	private boolean teclapressionada;
 
 	private int estadodejogo = estado_menu;
 
-	private BufferedImage imagemjogarnovamente;
 	private BufferedImage imagemfimdejogo;
-	private Image btnPlay;
+	private BufferedImage menu;
 
 	public Telajogo() {
 		ceu = new Ceu();
 		personagemprincipal = new Personagemprincipal();
 		land = new Terreno(Janelajogo.SCREEN_WIDTH, personagemprincipal);
 		personagemprincipal.setSpeedX(4);
-		imagemjogarnovamente = Resource.getResouceImage("data/restart.png");
 		imagemfimdejogo = Resource.getResouceImage("data/fimdejogo.png");
-		btnPlay = new ImageIcon("data/play.gif").getImage();
+		menu = Resource.getResouceImage("data/menu_principal.png");
 		gerenciadorInimigos = new GerenciadorInimigos(personagemprincipal);
 		nuvens = new Nuvens(Janelajogo.SCREEN_WIDTH, personagemprincipal);
 		GerenciadorColeteveis = new GerenciadorColeteveis(personagemprincipal);
+		
+		try {
+			musica =  Applet.newAudioClip(new URL("file","","data/aumentaponto.wav"));
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void iniciaJogo() {
@@ -102,11 +113,10 @@ public class Telajogo extends JPanel implements Runnable, KeyListener {
 			gerenciadorInimigos.draw(g);
 			personagemprincipal.draw(g);
 			g.setColor(Color.BLACK);
-			g.drawString("Obstaculos " + personagemprincipal.pontuacao, 300, 20);
-			g.drawString("Coletaveis " + personagemprincipal.coletaveis, 150, 20);
+			g.drawString("Obstaculos Ultrapassados: " + personagemprincipal.pontuacao, 500, 20);
+			g.drawString("Plantas Coletadas: " + personagemprincipal.coletaveis, 350, 20);
 			if (estadodejogo == estado_fimjogo) {
-				g.drawImage(imagemfimdejogo, 200, 30, null);
-				g.drawImage(imagemjogarnovamente, 283, 50, null);
+				g.drawImage(imagemfimdejogo, 200, 150, null);
 			}
 			break;
 		case estado_menu:
@@ -117,7 +127,7 @@ public class Telajogo extends JPanel implements Runnable, KeyListener {
 			//g.drawString("Ecorunner, um jogo sobre sustentabilidade", 200, 20);
 			//g.drawString("APERTE ESPAÇO PARA COMEÇAR ", 200, 50);
 			//g.drawString("APERTE ESC PARA SAIR ", 200, 100);
-			g.drawImage(btnPlay, 200,30,null);
+			g.drawImage(menu, 10,0,null);
 			break;
 		}
 	}
@@ -135,7 +145,8 @@ public class Telajogo extends JPanel implements Runnable, KeyListener {
 
 		long fimproceso;
 		long lag = 0;
-
+		
+		tocamusica();
 		while (true) {
 			atualizajogo();
 			repaint();
@@ -210,6 +221,10 @@ public class Telajogo extends JPanel implements Runnable, KeyListener {
 		personagemprincipal.morte(false);
 		personagemprincipal.reseta();
 		GerenciadorColeteveis.resetar();
+	}
+
+	public void tocamusica(){
+		musica.play();
 	}
 
 }

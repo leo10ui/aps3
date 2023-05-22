@@ -40,7 +40,7 @@ public class Personagemprincipal {
 	
 	private AudioClip sompulo;
 	private AudioClip mortesom;
-	private AudioClip baraulhobonus;
+	private AudioClip barulhobonus;
 	
 	public Personagemprincipal() {
 		posX = 50;
@@ -60,7 +60,7 @@ public class Personagemprincipal {
 		try {
 			sompulo =  Applet.newAudioClip(new URL("file","","data/pulo.wav"));
 			mortesom =  Applet.newAudioClip(new URL("file","","data/morte.wav"));
-			baraulhobonus =  Applet.newAudioClip(new URL("file","","data/aumentaponto.wav"));
+			barulhobonus =  Applet.newAudioClip(new URL("file","","data/aumentaponto.wav"));
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -164,20 +164,20 @@ public class Personagemprincipal {
 	
 
 	public void tocasommoeda(){
-		baraulhobonus.play();
+		barulhobonus.play();
 	}
 
 	public void aumentapontos() {
 		pontuacao += 1;
 		if(pontuacao % 100 == 0) {
-			baraulhobonus.play();
+			barulhobonus.play();
 		}
 	}
 
 	public void aumentacoletaveis() {
 		coletaveis += 1;
 		if(coletaveis % 100 == 0) {
-			baraulhobonus.play();
+			barulhobonus.play();
 		}
 	}
 	
