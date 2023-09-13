@@ -62,7 +62,7 @@ public class Telajogo extends JPanel implements Runnable, KeyListener {
 		GerenciadorColeteveis = new GerenciadorColeteveis(personagemprincipal);
 		
 		try {
-			musica =  Applet.newAudioClip(new URL("file","","data/aumentaponto.wav"));
+			musica =  Applet.newAudioClip(new URL("file","","data/iniciarJogo.wav"));
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
